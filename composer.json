@@ -1,22 +1,24 @@
 {
-    "name": "abytemore/composer-helper",
-    "type": "library",
-    "description": "Runs composer scripts.",
-    "keywords": ["composer", "scripts"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Ronald Mitterer",
-            "email": "ronald.mitterer@abytemore.com",
-            "homepage": "https://www.abytemore.com"
-        }
-    ],
-    "require": {
-        "php": ">=7.2"
-    },
-    "require-dev": {
-    },
-    "autoload": {
-        "psr-4": {"abytemore\\ComposerHelper\\": "src"}
+  "name": "abytemore/composer-helper",
+  "description": "Runs composer scripts.",
+  "keywords": ["composer", "scripts"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ronald Mitterer",
+      "email": "ronald.mitterer@abytemore.com",
+      "homepage": "https://www.abytemore.com"
     }
+  ],
+  "require": {
+    "php": ">=7.2"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {"abytemore\\ComposerHelper\\": "src"}
+  },
+  "extra": {
+    "class": "abytemore\\ComposerHelper\\ComposerHelper"
+  }
 }
