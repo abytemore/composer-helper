@@ -14,6 +14,8 @@ composer-helper:
     target: '/absolute/path/to/target/folder'
     link: '/absolute/path/to/symlink'
 ```
+The #target# is the folder where your package development is done (maybe "/libs"). #link# is the symlink folder, where the package, which is under development, would be installed by composer normally.
+
 
 Extend the "scripts" section in your composer.json like this:
 ```json
@@ -23,9 +25,11 @@ Extend the "scripts" section in your composer.json like this:
       "abytemore\\ComposerHelper:postInstall"
     ],
     "pre-install-cmd": [
-      "abytemore\\ComposerHelper:PreInstall"
+      "abytemore\\ComposerHelper:preInstall"
     ],
     ...
-  },
-  ...
+},
+...
 ```
+
+After doing the all the configuration stuff, you can start using the package. The pre- and postInstall scripts are called directly by a `composer install`. You will see some status messages in the console. Keep an eye on messages like "Composer helper message: ...".
