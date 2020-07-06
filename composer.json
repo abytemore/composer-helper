@@ -1,5 +1,6 @@
 {
   "name": "abytemore/composer-helper",
+  "type": "library",
   "description": "Runs composer scripts.",
   "keywords": ["composer", "scripts"],
   "license": "MIT",

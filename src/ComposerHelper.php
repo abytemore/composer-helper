@@ -1,52 +1,32 @@
 <?php
-
 namespace abytemore\ComposerHelper;
 
 use Composer\Installer\InstallerEvent;
 use Composer\Script\Event;
 use Composer\Installer\PackageEvent;
+use Composer\Script\ScriptEvents;
 
 class ComposerHelper
 {
-    public static function preUpdate(Event $event)
+
+    /**
+     * Composer PRE-INSTALL event
+     * @param Event $event
+     */
+    public static function preInstall(Event $event)
     {
-        $composer = $event->getComposer();
-        // do stuff
+        $ach = new AbstractComposerHelper($event);
+        $ach->composerPreInstall();
     }
 
-    public static function postUpdate(Event $event)
+    /**
+     * Composer POST-INSTALL event
+     * @param Event $event
+     */
+    public static function postInstall(Event $event)
     {
-        $composer = $event->getComposer();
-        // do stuff
+        $ach = new AbstractComposerHelper($event);
+        $ach->composerPostInstall();
     }
 
-    public static function preInstall(InstallerEvent $event)
-    {
-        $composer = $event->getComposer();
-        // do stuff
-    }
-    public static function postInstall(InstallerEvent $event)
-    {
-        $composer = $event->getComposer();
-        // do stuff
-    }
-
-    public static function postAutoloadDump(Event $event)
-    {
-        $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
-        require $vendorDir . '/autoload.php';
-
-//        some_function_from_an_autoloaded_file();
-    }
-
-    public static function postPackageInstall(PackageEvent $event)
-    {
-        $installedPackage = $event->getOperation()->getPackage();
-        // do stuff
-    }
-
-    public static function warmCache(Event $event)
-    {
-        // make cache toasty
-    }
 }
