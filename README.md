@@ -11,7 +11,7 @@ composer require abytemore/composer-helper
 Add a **composer-helper.yml** file to the root folder of your application. The content looks like:
 ```yaml
 packages:
-    abytemore:
+    your-vendor:
         target: '/absolute/path/to/your/target/folder'
         link: '/absolute/path/to/your/symlink/folder'
 ```
