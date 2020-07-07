@@ -1,6 +1,7 @@
 # Composer Helper Package
 This package is ment as an useful library, making your developer days a little bit more sunny ;-).
 At the moment the most important feature is moving package or bundle development from "/vendor" folder to an extra folder in your application. The `require` section of your composer.yml is untouched so deployment keeps consistent.
+Handle the packages in your development folder like completely isolatet git repos.
 
 ## Installation
 ```bash
