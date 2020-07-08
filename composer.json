@@ -12,10 +12,10 @@
     }
   ],
   "require": {
-    "php": ">=7.2"
+    "php": ">=7.2",
+    "neronmoon/scriptsdev": "^0.1.7"
   },
   "require-dev": {
-    "neronmoon/scriptsdev": "^0.1.7"
   },
   "autoload": {
     "psr-4": {"abytemore\\ComposerHelper\\": "src"}
