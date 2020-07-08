@@ -18,21 +18,20 @@ packages:
 ```
 The **target** is the folder where your package development is done (maybe "/libs"). **link** is the symlink folder, where the package, which is under development, would be installed by composer normally (maybe "/vendor/namespace/your-package").
 
-
-Extend the "scripts" section in your composer.json like this:
+Extend the "extra" section in your composer.json like this (special thanks to neronmoon/scriptsdev at this point!):
 ```json
 ...
-"scripts": {
-    "post-install-cmd": [
-      "abytemore\\ComposerHelper:postInstall"
-    ],
-    "pre-install-cmd": [
-      "abytemore\\ComposerHelper:preInstall"
-    ],
-    ...
+"extra": {
+    "scripts-dev": {
+        "post-install-cmd": [
+            "abytemore\\ComposerHelper:postInstall"
+        ],
+        "pre-install-cmd": [
+            "abytemore\\ComposerHelper:preInstall"
+        ]
+    },
 },
 ...
 ```
 
 After doing all the configuration stuff, you can start using the package. The pre- and postInstall scripts are called **directly** by a `composer install`. You will see some status messages in the console and symlinks in your **link** folder. Keep an eye on messages like "Composer helper message: ...".
-
