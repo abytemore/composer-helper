@@ -15,6 +15,7 @@ packages:
     your-vendor:
         target: '/absolute/path/to/your/target/folder'
         link: '/absolute/path/to/your/symlink/folder'
+        pimcore-assets-link: '/<serverroot>/web/bundles/<bundlename>' # This is optional and just for Pimcore!
 ```
 The **target** is the folder where your package development is done (maybe "/libs"). **link** is the symlink folder, where the package, which is under development, would be installed by composer normally (maybe "/vendor/namespace/your-package").
 
