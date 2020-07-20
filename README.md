@@ -25,10 +25,10 @@ Extend the "extra" section in your composer.json like this (special thanks to ne
 "extra": {
     "scripts-dev": {
         "post-install-cmd": [
-            "abytemore\\ComposerHelper:postInstall"
+            "abytemore\\ComposerHelper::postInstall"
         ],
         "pre-install-cmd": [
-            "abytemore\\ComposerHelper:preInstall"
+            "abytemore\\ComposerHelper::preInstall"
         ]
     },
 },
