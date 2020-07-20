@@ -30,7 +30,7 @@ Extend the "extra" section in your composer.json like this (special thanks to ne
         "pre-install-cmd": [
             "abytemore\\ComposerHelper::preInstall"
         ]
-    },
+    }
 },
 ...
 ```
