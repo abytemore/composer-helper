@@ -1,5 +1,5 @@
 <?php
-namespace abytemore\ComposerHelper;
+namespace ComposerHelper;
 
 use Composer\Installer\InstallerEvent;
 use Composer\Script\Event;
