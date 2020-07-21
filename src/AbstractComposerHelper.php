@@ -1,6 +1,6 @@
 <?php
 
-namespace abytemore\ComposerHelper;
+namespace ComposerHelper;
 
 
 use Composer\Util\ProcessExecutor;
