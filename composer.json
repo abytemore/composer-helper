@@ -18,9 +18,6 @@
   "require-dev": {
   },
   "autoload": {
-    "psr-4": {"abytemore\\ComposerHelper\\": "src"}
-  },
-  "extra": {
-    "class": "abytemore\\ComposerHelper\\ComposerHelper"
+    "psr-4": {"ComposerHelper\\": "src/"}
   }
 }

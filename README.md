@@ -12,25 +12,35 @@ composer require abytemore/composer-helper
 Add a **composer-helper.yml** file to the root folder of your application. The content looks like:
 ```yaml
 packages:
-    vendor/package:
+    your-vendor:
         target: '/absolute/path/to/your/target/folder'
         link: '/absolute/path/to/your/symlink/folder'
         pimcore-assets-link: '/<serverroot>/web/bundles/<bundlename>' # This is optional and just for Pimcore!
 ```
 The **target** is the folder where your package development is done (maybe "/libs"). **link** is the symlink folder, where the package, which is under development, would be installed by composer normally (maybe "/vendor/namespace/your-package").
 
-Extend the "extra" section in your composer.json like this (special thanks to neronmoon/scriptsdev at this point!):
+### Environment files
+Add two environment files (dotenv) files to your root path:
+1. "/.env" - Productive environment file; minimum content is `ENVIRONMENT=prod`
+2. "/.env.dev" - Development environment file (__NOTE: add this file to your .gitignore!__), minimum content is `ENVIRONMENT=dev`
+
+### composer.json Scripts
+Extend the "scripts" section in your composer.json like this (special thanks to neronmoon/scriptsdev at this point!):
 ```json
 ...
-"extra": {
-    "scripts-dev": {
-        "post-install-cmd": [
-            "abytemore\\ComposerHelper::postInstall"
-        ],
-        "pre-install-cmd": [
-            "abytemore\\ComposerHelper::preInstall"
-        ]
-    }
+"scripts": {
+    "post-install-cmd": [
+       ...
+       "abytemore\\ComposerHelper:postInstall"
+    ],
+    "pre-install-cmd": [
+      ...
+      "abytemore\\ComposerHelper:preInstall"
+    ],
+    "post-update-cmd": [
+      ...
+      "abytemore\\ComposerHelper\\ComposerHelper::postUpdate"
+    ],
 },
 ...
 ```

@@ -28,8 +28,7 @@ class AbstractComposerHelper
     }
 
     /**
-     * @param $event
-     * @return string
+     * Composer PRE install script
      */
     public function composerPreInstall() {
         if($this->config['packages']) {
@@ -47,13 +46,12 @@ class AbstractComposerHelper
                 }
             }
         } else {
-            $this->io->write('<comment>ComposerHelper message:No Packages in config - see "composer-helper.yml" file?</comment>', true);
+            $this->io->write('<comment>ComposerHelper message: No Packages in config - see "composer-helper.yml" file?</comment>', true);
         }
     }
 
     /**
-     * @param $event
-     * @return string
+     * Composer POST install script
      */
     public function composerPostInstall() {
         if($this->config['packages']) {
@@ -91,6 +89,14 @@ class AbstractComposerHelper
         } else {
             $this->io->write('<comment>ComposerHelper message:No Packages in config - see "composer-helper.yml" file?</comment>', true);
         }
+    }
+
+    /**
+     * Composer POST update script
+     */
+
+    public function composerPostUpdate() {
+        $this->composerPostInstall();
     }
 
     /**
