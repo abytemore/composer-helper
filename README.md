@@ -33,15 +33,15 @@ Extend the "scripts" section in your composer.json like this (special thanks to 
 "scripts": {
     "post-install-cmd": [
        ...
-       "abytemore\\ComposerHelper:postInstall"
+       "ComposerHelper\\ComposerHelper:postInstall"
     ],
     "pre-install-cmd": [
       ...
-      "abytemore\\ComposerHelper:preInstall"
+      "ComposerHelper\\ComposerHelper:preInstall"
     ],
     "post-update-cmd": [
       ...
-      "abytemore\\ComposerHelper\\ComposerHelper::postUpdate"
+      "ComposerHelper\\ComposerHelper::postUpdate"
     ],
 },
 ...
