@@ -12,7 +12,7 @@ composer require abytemore/composer-helper
 Add a **composer-helper.yml** file to the root folder of your application. The content looks like:
 ```yaml
 packages:
-    your-vendor:
+    your-vendor/package:
         target: '/absolute/path/to/your/target/folder'
         link: '/absolute/path/to/your/symlink/folder'
         pimcore-assets-link: '/<serverroot>/web/bundles/<bundlename>' # This is optional and just for Pimcore!
@@ -23,6 +23,8 @@ The **target** is the folder where your package development is done (maybe "/lib
 Add two environment files (dotenv) files to your root path:
 1. "/.env" - Productive environment file; minimum content is `ENVIRONMENT=prod`
 2. "/.env.dev" - Development environment file (__NOTE: add this file to your .gitignore!__), minimum content is `ENVIRONMENT=dev`
+
+Yout can add other parameters to .env as you like.
 
 ### composer.json Scripts
 Extend the "scripts" section in your composer.json like this (special thanks to neronmoon/scriptsdev at this point!):
