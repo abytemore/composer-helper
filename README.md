@@ -19,10 +19,9 @@ packages:
 ```
 The **target** is the folder where your package development is done (maybe "/libs"). **link** is the symlink folder, where the package, which is under development, would be installed by composer normally (maybe "/vendor/namespace/your-package").
 
-### Environment files
-Add two environment files (dotenv) files to your root path:
-1. "/.env" - Productive environment file; minimum content is `ENVIRONMENT=prod`
-2. "/.env.dev" - Development environment file (__NOTE: add this file to your .gitignore!__), minimum content is `ENVIRONMENT=dev`
+### Environment file
+Add environment file (dotenv) to your root path:
+"/.env" - Environment file; minimum content is `ENVIRONMENT=prod` or `ENVIRONMENT=dev` depending on your environment
 
 Yout can add other parameters to .env as you like.
 
