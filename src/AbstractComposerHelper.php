@@ -112,6 +112,6 @@ class AbstractComposerHelper
      * @return mixed
      */
     private static function getCurrentPath() {
-        return $_SERVER['PWD'];
+        return getcwd();
     }
 }
