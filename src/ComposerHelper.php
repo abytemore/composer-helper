@@ -53,7 +53,7 @@ class ComposerHelper
      * @return array|false|string
      */
     private static function getEnvironment($event){
-        $serverRoot = $_SERVER['PWD'];
+        $serverRoot = getcwd();
         $io = $event->getIO();
 
         $dotenv = new Dotenv();
