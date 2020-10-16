@@ -17,7 +17,7 @@ packages:
         link: '/absolute/path/to/your/symlink/folder'
         pimcore-assets-link: '/<serverroot>/web/bundles/<bundlename>' # This is optional and just for Pimcore!
 ```
-The **target** is the folder where your package development is done (maybe "/libs"). **link** is the symlink folder, where the package, which is under development, would be installed by composer normally (maybe "/vendor/namespace/your-package").
+The **target** is the folder where your package development is done (maybe "/libs" or "/dev"). **link** is the symlink folder, where the package, which is under development, would be installed by composer normally (maybe "/vendor/namespace/your-package").
 
 ### Environment file
 Add environment file (dotenv) to your root path:
@@ -26,17 +26,13 @@ Add environment file (dotenv) to your root path:
 Yout can add other parameters to .env as you like.
 
 ### composer.json Scripts
-Extend the "scripts" section in your composer.json like this (special thanks to neronmoon/scriptsdev at this point!):
+Extend the "scripts" section in your composer.json like this:
 ```json
 ...
 "scripts": {
     "post-install-cmd": [
        ...
        "ComposerHelper\\ComposerHelper::postInstall"
-    ],
-    "pre-install-cmd": [
-      ...
-      "ComposerHelper\\ComposerHelper::preInstall"
     ],
     "post-update-cmd": [
       ...

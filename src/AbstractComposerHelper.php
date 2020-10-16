@@ -28,29 +28,6 @@ class AbstractComposerHelper
     }
 
     /**
-     * Composer PRE install script
-     */
-    public function composerPreInstall() {
-        if($this->config['packages']) {
-            foreach ($this->config['packages'] as $package) {
-                $target = $package['target'];
-                $link = $package['link'];
-
-                // Remove symlink
-                try {
-                    $this->getComposerFilesystem()->unlink($link);
-
-                    $this->io->write('<info>ComposerHelper message: Symlink to "' . $link . '" removed successfully!</info>', true);
-                } catch (\RuntimeException $exception) {
-                    $this->io->write('<comment>ComposerHelper message: Unable to remove symlink to "' . $link . '"!</comment>', true);
-                }
-            }
-        } else {
-            $this->io->write('<comment>ComposerHelper message: No Packages in config - see "composer-helper.yml" file?</comment>', true);
-        }
-    }
-
-    /**
      * Composer POST install script
      */
     public function composerPostInstall() {

@@ -17,10 +17,6 @@ class ComposerHelper
      */
     public static function preInstall(Event $event)
     {
-        if(self::getEnvironment($event) == self::DEV){
-            $ach = new AbstractComposerHelper($event);
-            $ach->composerPreInstall();
-        }
     }
 
     /**
