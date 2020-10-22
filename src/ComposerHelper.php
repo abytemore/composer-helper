@@ -59,7 +59,7 @@ class ComposerHelper
             $io->write('<comment>ComposerHelper message: Do you have created dotenv files (.env, .env.dev) in root folder of your server?</comment>', true);
         }
 
-        return getenv('ENVIRONMENT');
+        return getenv('COMPOSERHELPER');
     }
 
 }
