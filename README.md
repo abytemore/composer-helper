@@ -21,7 +21,7 @@ The **target** is the folder where your package development is done (maybe "/lib
 
 ### Environment file
 Add environment file (dotenv) to your root path:
-"/.env" - Environment file; minimum content is `ENVIRONMENT=prod` or `ENVIRONMENT=dev` depending on your environment. Don't forget to add .env file to your .gitignore!
+"/.env" - Environment file; minimum content is `COMPOSERHELPER=prod` or `COMPOSERHELPER=dev` depending on your environment. Don't forget to add .env file to your .gitignore!
 
 Yout can add other parameters to .env as you like.
 
