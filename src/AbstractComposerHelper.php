@@ -47,13 +47,13 @@ class AbstractComposerHelper
 
                 // Create symlink from target folder
                 try {
-                    $this->filesystem->relativeSymlink($target, $link );
+                    $this->filesystem->relativeSymlink($target, $link);
                     $this->io->write('<info>ComposerHelper message: Symlink to "' . $link . '" created successfully!</info>', true);
 
                     // Create Symlink for bundle assets (Pimcore only)
                     if($pimcoreAssetsLink) {
                         try {
-                            $this->filesystem->relativeSymlink($target . '/Resources/public', $pimcoreAssetsLink );
+                            $this->filesystem->relativeSymlink($target . '/Resources/public', $pimcoreAssetsLink);
                             $this->io->write('<info>ComposerHelper message: Symlink to assets folder"' . $pimcoreAssetsLink . '" created successfully!</info>', true);
                         } catch (\RuntimeException $exception) {
                             $this->io->write('<comment>ComposerHelper message: Error creating symlink to assets folder "' . $target . '"!</comment>', true);

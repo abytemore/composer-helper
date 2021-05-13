@@ -1,12 +1,13 @@
 <?php
 namespace ComposerHelper;
 
-use Composer\Installer\InstallerEvent;
 use Composer\Script\Event;
-use Composer\Installer\PackageEvent;
-use Composer\Script\ScriptEvents;
 use Symfony\Component\Dotenv\Dotenv;
 
+/**
+ * Class ComposerHelper
+ * @package ComposerHelper
+ */
 class ComposerHelper
 {
     const DEV = 'dev';
@@ -53,6 +54,7 @@ class ComposerHelper
         $io = $event->getIO();
 
         $dotenv = new Dotenv();
+        $dotenv->usePutenv(true);
         try {
             $dotenv->load($serverRoot.'/.env');
         } catch(\Exception $exception){
