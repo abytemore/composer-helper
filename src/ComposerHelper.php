@@ -56,7 +56,7 @@ class ComposerHelper
         $dotenv = new Dotenv();
         $dotenv->usePutenv(true);
         try {
-            $dotenv->load($serverRoot.'/.env');
+            $dotenv->loadEnv($serverRoot . '/.env');
         } catch(\Exception $exception){
             $io->write('<comment>ComposerHelper message: Do you have created dotenv files (.env, .env.dev) in root folder of your server?</comment>', true);
         }
